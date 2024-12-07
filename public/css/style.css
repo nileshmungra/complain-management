@@ -1,0 +1,330 @@
+/* Reset browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Clean, modern typography */
+  background-color: #f8f9fb; /* Neutral background */
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* App container styling */
+.app-container {
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Header section */
+.app-header {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.btn {
+  padding: 12px 18px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3e8e41;
+}
+
+.btn-secondary {
+  background-color: #017cff;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #005bb5;
+}
+
+/* Upload and Search Section */
+.excel-upload-section {
+    display: grid;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.upload-and-search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.upload-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-file-upload {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
+
+input[type="file"] {
+  /* display: none; */
+}
+
+.btn-upload {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-upload:hover {
+  background-color: #218838;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.search-input {
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.btn-search {
+  background-color: #ffc107;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-search:hover {
+  background-color: #e0a800;
+}
+
+.btn-clear {
+  background-color: #dc3545;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-clear:hover {
+  background-color: #b02a37;
+}
+
+/* Complaints Table */
+.complaints-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  min-width:800px;
+  border-radius: 10px;
+  /* overflow: hidden; */
+  overflow-x:auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.complaints-table th, .complaints-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.complaints-table th {
+  background-color: #f4f6f8;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.complaints-table td {
+  background-color: white;
+  font-size: 0.95rem;
+}
+
+.complaints-table tr:hover {
+  background-color: #f7f9fc;
+}
+
+/* Actions buttons in the table */
+.btn-edit {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-edit:hover {
+  text-decoration: underline;
+}
+
+.btn-delete {
+  color: #dc3545;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-delete:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .app-header {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .excel-upload-section {
+    padding: 15px;
+  }
+
+  .complaints-table th, .complaints-table td {
+    padding: 10px;
+  }
+
+  .complaints-table {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+
+.btn-update {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btn-update i {
+  font-size: 20px;
+  color: green;
+}
+
+.btn-update:hover i {
+  color: darkgreen;
+}
+
+.inline-form {
+  display: inline;
+}
+
+/* Add scrollable container for tables */
+.table-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  display: block;
+  border: 1px solid #ddd; /* Optional: Border for better distinction */
+  border-radius: 10px;
+}
+
+.table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+/* Make sure the table doesn't expand beyond its container */
+.complaints-table {
+  min-width: 100%;
+  table-layout: auto;
+}

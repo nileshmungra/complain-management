@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replacement Report</title>
+  <link rel="stylesheet" href="/css/style.css"> <!-- Link to your custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Replacement Report</h1>
+    </header>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <a href="/" class="btn btn-primary">Back to Complaints</a>
+    </div>
+
+    <!-- Replacement Report Section -->
+    <section class="replacement-report-section">
+      <table class="complaints-table">
+        <thead>
+          <tr>
+            <th scope="col">Sr. No</th>
+            <th scope="col">Farmer Name</th>
+            <th scope="col">Complaint Brief</th>
+            <th scope="col">Material Supply Date</th>
+            <th scope="col">Complaint Date</th>
+            <th scope="col">Replacement Received</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% if (!complaints || complaints.length === 0) { %>
+          <tr>
+            <td colspan="7">No complaints requiring replacements found.</td>
+          </tr>
+        <% } else { %>
+          <% complaints.forEach((complaint) => { %>
+            <tr>
+              <td><%= complaint.srno %></td>
+              <td><%= complaint.farmerName %></td>
+              <td><%= complaint.complaintBrief %></td>
+              <td><%= complaint.materialSupplyDate %></td>
+              <td><%= complaint.complainDate %></td>
+              <td><%= complaint.replacementReceived || 'No' %></td>
+              <td>
+                <% if (complaint.replacementReceived === 'No') { %>
+                  <form action="/update-replacement/<%= complaint.srno %>" method="POST" class="inline-form">
+                    <button type="submit" class="btn btn-update" title="Mark as Received" aria-label="Mark as Received">
+                      <i class="fas fa-check-circle"></i>
+                    </button>
+                  </form>
+                <% } %>
+              </td>
+            </tr>
+          <% }); %>
+        <% } %>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
